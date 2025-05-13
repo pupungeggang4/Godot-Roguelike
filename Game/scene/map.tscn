@@ -1,3 +1,24 @@
-[gd_scene format=3 uid="uid://dntbaqhle72iw"]
+[gd_scene load_steps=3 format=3 uid="uid://dntbaqhle72iw"]
+
+[ext_resource type="Theme" uid="uid://cck5exjquex2v" path="res://resource/font_neodgm.tres" id="1_rgtto"]
+[ext_resource type="Script" uid="uid://dyhkjmpnv2g81" path="res://script/scene/map.gd" id="1_wpp1k"]
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_wpp1k")
+
+[node name="LabelTitle" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 184.0
+offset_bottom = 56.0
+theme = ExtResource("1_rgtto")
+text = "Map"
+
+[node name="ButtonBack" type="ReferenceRect" parent="."]
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false
