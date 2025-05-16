@@ -6,5 +6,5 @@ func _process(delta: float) -> void:
 func handle_input() -> void:
     if Input.is_action_just_released('mouse_left'):
         var mouse = get_viewport().get_mouse_position()
-        if Func.point_inside_rect_array(mouse, UI.UI.title.button_start):
+        if Func.point_inside_rect_array(mouse, UI.title.button_start):
             Func.change_scene(self, 'res://scene/map.tscn', 'Map')
