@@ -8,7 +8,11 @@ var title = {
 
 var map = {
     'button_back': [1180, 20, 80, 80],
-    'element_start': [20, 80],
+    'element_start': [180, 80],
     'element_size': [80, 80],
     'element_interval': [120, 120]
+}
+
+var battle = {
+    'button_menu': [1180, 20, 80, 80]
 }
