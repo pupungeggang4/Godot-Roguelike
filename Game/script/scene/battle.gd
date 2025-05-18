@@ -1,14 +1,30 @@
 extends Node2D
 
 @export var turn = 0
+var tile = [
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null],
+    [null, null, null, null, null, null, null, null, null, null]
+]
 
 func _ready() -> void:
-    pass
+    battle_init()
+    tile[5][5] = get_node('Field/Unit/Player')
     
 func _process(delta: float) -> void:
     handle_input()
     if GVar.menu == false and GVar.state == '':
         handle_tick(delta)
+
+func battle_init() -> void:
+    pass
 
 func handle_tick(delta: float) -> void:
     pass

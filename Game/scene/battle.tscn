@@ -1,21 +1,23 @@
-[gd_scene load_steps=8 format=4 uid="uid://b71047jcygq5q"]
+[gd_scene load_steps=10 format=4 uid="uid://b71047jcygq5q"]
 
 [ext_resource type="Script" uid="uid://dkawtrcif8wh5" path="res://script/scene/battle.gd" id="1_afp2b"]
 [ext_resource type="Texture2D" uid="uid://bvgdscjhcgja5" path="res://image/ButtonMenu.png" id="2_ffp3s"]
 [ext_resource type="TileSet" uid="uid://beqsjx2t2syr2" path="res://resource/tileset.tres" id="3_ebedk"]
 [ext_resource type="Script" uid="uid://dhaow2obd8yhe" path="res://script/thing/field.gd" id="3_q27o7"]
-[ext_resource type="PackedScene" uid="uid://b160hg5iihfcq" path="res://scene/menu.tscn" id="3_soyo5"]
-[ext_resource type="Script" uid="uid://b5lu2v00msan7" path="res://script/thing/player_battle.gd" id="4_0okv5"]
-[ext_resource type="Texture2D" uid="uid://d1r5sevldrky8" path="res://image/Player.png" id="6_6qw66"]
+[ext_resource type="PackedScene" uid="uid://b160hg5iihfcq" path="res://scene/window/menu.tscn" id="3_soyo5"]
+[ext_resource type="Texture2D" uid="uid://xs7ugbq47fne" path="res://image/Controls.png" id="5_bdn7b"]
+[ext_resource type="PackedScene" uid="uid://mggausi6qsqa" path="res://scene/thing/player.tscn" id="5_ougy3"]
+[ext_resource type="Texture2D" uid="uid://dm27soybbfu2t" path="res://image/Space.png" id="6_yyook"]
+[ext_resource type="Theme" uid="uid://cck5exjquex2v" path="res://resource/font_neodgm.tres" id="7_5mh2w"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_afp2b")
 
 [node name="ButtonMenu" type="TextureRect" parent="."]
-offset_left = 1180.0
-offset_top = 20.0
-offset_right = 1260.0
-offset_bottom = 100.0
+offset_left = 1160.0
+offset_top = 40.0
+offset_right = 1240.0
+offset_bottom = 120.0
 texture = ExtResource("2_ffp3s")
 
 [node name="Field" type="Node2D" parent="."]
@@ -32,6 +34,12 @@ position = Vector2(40, 40)
 tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAABAAEAAAABAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAAEAAYAAAABAAAAAAAFAAMAAAABAAAAAAACAAAAAAABAAAAAAABAAIAAAAAAAAAAAACAAIAAAABAAAAAAAAAAIAAAABAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAABAAAAAAAAAAUAAAAAAAAAAAABAAYAAAAAAAAAAAACAAYAAAABAAAAAAACAAUAAAAAAAAAAAADAAUAAAABAAAAAAADAAQAAAAAAAAAAAAEAAQAAAABAAAAAAAEAAMAAAAAAAAAAAADAAMAAAABAAAAAAACAAMAAAAAAAAAAAACAAQAAAABAAAAAAADAAYAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAUAAAABAAAAAAAGAAQAAAABAAAAAAAEAAIAAAABAAAAAAAEAAEAAAAAAAAAAAADAAEAAAABAAAAAAADAAIAAAAAAAAAAAABAAUAAAABAAAAAAABAAMAAAABAAAAAAABAAQAAAAAAAAAAAAAAAYAAAABAAAAAAAAAAcAAAAAAAAAAAAAAAgAAAABAAAAAAAAAAkAAAAAAAAAAAABAAkAAAABAAAAAAABAAgAAAAAAAAAAAABAAcAAAABAAAAAAACAAcAAAAAAAAAAAACAAgAAAABAAAAAAADAAgAAAAAAAAAAAAEAAgAAAABAAAAAAAFAAgAAAAAAAAAAAAFAAcAAAABAAAAAAAEAAcAAAAAAAAAAAADAAcAAAABAAAAAAACAAkAAAAAAAAAAAADAAkAAAABAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAABAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAABAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAABAAAAAAAJAAgAAAAAAAAAAAAIAAgAAAABAAAAAAAHAAgAAAAAAAAAAAAGAAgAAAABAAAAAAAGAAcAAAAAAAAAAAAHAAcAAAABAAAAAAAIAAcAAAAAAAAAAAAJAAYAAAAAAAAAAAAIAAYAAAABAAAAAAAHAAYAAAAAAAAAAAAGAAYAAAABAAAAAAAJAAcAAAABAAAAAAAIAAUAAAAAAAAAAAAIAAQAAAABAAAAAAAHAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAEAAUAAAAAAAAAAAAFAAQAAAAAAAAAAAAHAAUAAAABAAAAAAAJAAUAAAABAAAAAAAJAAQAAAAAAAAAAAAJAAMAAAABAAAAAAAIAAMAAAAAAAAAAAAHAAMAAAABAAAAAAAGAAMAAAAAAAAAAAAFAAIAAAAAAAAAAAACAAEAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAABAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAABAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAABAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAABAAAAAAAIAAEAAAAAAAAAAAAHAAEAAAABAAAAAAAGAAEAAAAAAAAAAAAFAAEAAAABAAAAAAAGAAIAAAABAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAABAAAAAAAJAAIAAAAAAAAAAAA=")
 tile_set = ExtResource("3_ebedk")
 
+[node name="Unit" type="Node2D" parent="Field"]
+
+[node name="Player" parent="Field/Unit" instance=ExtResource("5_ougy3")]
+
+[node name="Enemy" type="Node2D" parent="Field"]
+
 [node name="Right" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -41,23 +49,23 @@ offset_bottom = 40.0
 [node name="Hand" type="ColorRect" parent="Right"]
 layout_mode = 0
 offset_left = 760.0
-offset_top = 520.0
+offset_top = 420.0
 offset_right = 1240.0
-offset_bottom = 680.0
+offset_bottom = 580.0
 
 [node name="Item" type="ColorRect" parent="Right"]
 layout_mode = 0
 offset_left = 760.0
-offset_top = 340.0
+offset_top = 240.0
 offset_right = 1000.0
-offset_bottom = 420.0
+offset_bottom = 320.0
 
 [node name="Equipment" type="ColorRect" parent="Right"]
 layout_mode = 0
 offset_left = 760.0
-offset_top = 340.0
+offset_top = 240.0
 offset_right = 1240.0
-offset_bottom = 500.0
+offset_bottom = 400.0
 
 [node name="Portrait" type="ColorRect" parent="Right"]
 layout_mode = 0
@@ -66,16 +74,47 @@ offset_top = 40.0
 offset_right = 920.0
 offset_bottom = 200.0
 
-[node name="Player" type="Node2D" parent="."]
-position = Vector2(72, 72)
-script = ExtResource("4_0okv5")
+[node name="Control" type="Control" parent="Right"]
+layout_mode = 1
+anchor_left = 19.0
+anchor_top = 1.0
+anchor_right = 19.0
+anchor_bottom = 1.0
+offset_top = 560.0
+offset_right = 400.0
+offset_bottom = 640.0
 
-[node name="PlayerSprite" type="Sprite2D" parent="Player"]
-texture = ExtResource("6_6qw66")
+[node name="Controls" type="TextureRect" parent="Right/Control"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 80.0
+texture = ExtResource("5_bdn7b")
+
+[node name="Space" type="TextureRect" parent="Right/Control"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 80.0
+texture = ExtResource("6_yyook")
+
+[node name="TextMove" type="Label" parent="Right/Control"]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 44.0
+offset_right = 188.0
+offset_bottom = 76.0
+theme = ExtResource("7_5mh2w")
+text = "Move"
+
+[node name="TextMove2" type="Label" parent="Right/Control"]
+layout_mode = 0
+offset_left = 244.0
+offset_top = 44.0
+offset_right = 388.0
+offset_bottom = 76.0
+theme = ExtResource("7_5mh2w")
+text = "Skip Turn"
 
 [node name="Menu" parent="." instance=ExtResource("3_soyo5")]
 visible = false
-offset_left = 320.0
-offset_top = 240.0
-offset_right = 320.0
-offset_bottom = 240.0

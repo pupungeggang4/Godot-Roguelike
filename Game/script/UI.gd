@@ -7,14 +7,15 @@ var title = {
 }
 
 var map = {
-    'button_back': [1180, 20, 80, 80],
+    'button_back': [1160, 40, 80, 80],
+    'button_info': [1160, 600, 80, 80],
     'element_start': [180, 80],
     'element_size': [80, 80],
     'element_interval': [120, 120]
 }
 
 var battle = {
-    'button_menu': [1180, 20, 80, 80]
+    'button_menu': [1160, 40, 80, 80]
 }
 
 var menu = {
