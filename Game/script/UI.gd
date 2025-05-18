@@ -16,3 +16,8 @@ var map = {
 var battle = {
     'button_menu': [1180, 20, 80, 80]
 }
+
+var menu = {
+    'button_resume': [320, 320, 640, 80],
+    'button_exit': [320, 400, 640, 80]
+}

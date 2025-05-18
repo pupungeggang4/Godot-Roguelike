@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var turn = 0
+
 func _ready() -> void:
     pass
     
@@ -14,11 +16,22 @@ func handle_tick(delta: float) -> void:
 func handle_input() -> void:
     if Input.is_action_just_released('mouse_left'):
         var mouse = get_viewport().get_mouse_position()
-        if GVar.menu == false:
-            if Func.point_inside_rect_array(mouse, UI.battle.button_menu):
-                GVar.menu = true
-                get_node('Menu').show()
-        elif GVar.menu == true:
-            if Func.point_inside_rect_array(mouse, UI.battle.button_menu):
-                GVar.menu = false
-                get_node('Menu').hide()
+        handle_mouse(mouse)
+
+func handle_mouse(mouse: Vector2) -> void:
+    if GVar.menu == false:
+        if Func.point_inside_rect_array(mouse, UI.battle.button_menu):
+            GVar.menu = true
+            get_node('Menu').show()
+    elif GVar.menu == true:
+        if Func.point_inside_rect_array(mouse, UI.battle.button_menu):
+            GVar.menu = false
+            get_node('Menu').hide()
+        elif Func.point_inside_rect_array(mouse, UI.menu.button_resume):
+            GVar.menu = false
+            get_node('Menu').hide()
+        elif Func.point_inside_rect_array(mouse, UI.menu.button_exit):
+            GVar.menu = false
+            get_node('Menu').hide()
+            Func.change_scene(self, 'res://scene/title.tscn', 'Title')
+            GVar.state = ''

@@ -28,11 +28,16 @@ func _process(delta: float) -> void:
 func handle_input() -> void:
     if Input.is_action_just_released('mouse_left'):
         var mouse = get_viewport().get_mouse_position()
-        if Func.point_inside_rect_array(mouse, UI.map.button_back):
-            Func.change_scene(self, 'res://scene/title.tscn', 'Title')
-        for i in range(5):
-            for j in range(8):
-                if Func.point_inside_rect_array(mouse, [UI.map.element_start[0] + UI.map.element_interval[0] * j, UI.map.element_start[1] + UI.map.element_interval[1] * i, UI.map.element_size[0], UI.map.element_size[1]]):
+        handle_mouse(mouse)
+        
+func handle_mouse(mouse: Vector2) -> void:
+    if Func.point_inside_rect_array(mouse, UI.map.button_back):
+        Func.change_scene(self, 'res://scene/title.tscn', 'Title')
+    for i in range(5):
+        for j in range(8):
+            if Func.point_inside_rect_array(mouse, [UI.map.element_start[0] + UI.map.element_interval[0] * j, UI.map.element_start[1] + UI.map.element_interval[1] * i, UI.map.element_size[0], UI.map.element_size[1]]):
+                if j == Player.dungeon_column:
+                    Player.dungeon_column += 1
                     if map_element[i][j] == 2:
                         GVar.state = ''
                         Func.change_scene(self, 'res://scene/battle.tscn', 'Battle')
