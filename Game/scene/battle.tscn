@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://b71047jcygq5q"]
+[gd_scene load_steps=11 format=4 uid="uid://b71047jcygq5q"]
 
 [ext_resource type="Script" uid="uid://dkawtrcif8wh5" path="res://script/scene/battle.gd" id="1_afp2b"]
 [ext_resource type="Texture2D" uid="uid://bvgdscjhcgja5" path="res://image/ButtonMenu.png" id="2_ffp3s"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b160hg5iihfcq" path="res://scene/window/menu.tscn" id="3_soyo5"]
 [ext_resource type="Texture2D" uid="uid://xs7ugbq47fne" path="res://image/Controls.png" id="5_bdn7b"]
 [ext_resource type="PackedScene" uid="uid://mggausi6qsqa" path="res://scene/thing/player.tscn" id="5_ougy3"]
+[ext_resource type="Script" uid="uid://5flyevv05coi" path="res://script/battle_ui.gd" id="6_bdn7b"]
 [ext_resource type="Texture2D" uid="uid://dm27soybbfu2t" path="res://image/Space.png" id="6_yyook"]
 [ext_resource type="Theme" uid="uid://cck5exjquex2v" path="res://resource/font_neodgm.tres" id="7_5mh2w"]
 
@@ -40,11 +41,29 @@ tile_set = ExtResource("3_ebedk")
 
 [node name="Enemy" type="Node2D" parent="Field"]
 
+[node name="ReferenceRect" type="ReferenceRect" parent="Field"]
+offset_left = 104.0
+offset_top = 104.0
+offset_right = 616.0
+offset_bottom = 616.0
+border_color = Color(0, 0, 0, 1)
+border_width = 4.0
+editor_only = false
+
 [node name="Right" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("6_bdn7b")
+
+[node name="TextTurn" type="Label" parent="Right"]
+layout_mode = 0
+offset_left = 944.0
+offset_top = 44.0
+offset_right = 984.0
+offset_bottom = 67.0
+theme = ExtResource("7_5mh2w")
 
 [node name="Hand" type="ColorRect" parent="Right"]
 layout_mode = 0

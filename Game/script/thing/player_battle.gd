@@ -15,13 +15,10 @@ var coord = [0, 0]
 
 func _ready() -> void:
     coord = [5, 5]
-    adjust_position()
+    Func.adjust_position(self)
     
 func _process(delta: float) -> void:
     handle_input()
-
-func adjust_position() -> void:
-    position = Vector2(72 + 64 * coord[1], 72 + 64 * coord[0])
 
 func handle_input() -> void:
     handle_key()
@@ -35,10 +32,13 @@ func handle_key_game():
     for move in moves:
         if Input.is_action_just_released(move):
             var temp_coord = [coord[0] + moves[move][0], coord[1] + moves[move][1]]
-            if Func.point_inside_array(temp_coord, [10, 10]):
+            if Func.point_inside_array(temp_coord, [1, 1, 8, 8]):
                 if Battle.tile[temp_coord[0]][temp_coord[1]] == null:
                     Battle.tile[coord[0]][coord[1]] = null
                     coord[0] = temp_coord[0]
                     coord[1] = temp_coord[1]
                     Battle.tile[coord[0]][coord[1]] = self
-                    adjust_position()
+                    Battle.end_turn()
+                    Battle.enemy_turn()
+                    Battle.start_turn()
+                    Func.adjust_position(self)

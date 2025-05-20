@@ -13,6 +13,7 @@ var tile = [
     [null, null, null, null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null, null, null, null]
 ]
+var wave = [[3, 1], [6, 1], [9, 1]]
 
 func _ready() -> void:
     battle_init()
@@ -24,6 +25,15 @@ func _process(delta: float) -> void:
         handle_tick(delta)
 
 func battle_init() -> void:
+    pass
+    
+func end_turn() -> void:
+    pass
+    
+func enemy_turn() -> void:
+    pass
+    
+func start_turn() -> void:
     pass
 
 func handle_tick(delta: float) -> void:
