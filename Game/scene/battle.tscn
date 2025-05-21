@@ -139,6 +139,21 @@ centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 0, 40)
 
+[node name="ExpBarEmpty" type="ColorRect" parent="Right"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 690.0
+offset_right = 1240.0
+offset_bottom = 710.0
+
+[node name="ExpBarFull" type="ColorRect" parent="Right"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 690.0
+offset_right = 1240.0
+offset_bottom = 710.0
+color = Color(1, 1, 0, 1)
+
 [node name="Control" type="Control" parent="Right"]
 layout_mode = 1
 anchor_left = 19.0

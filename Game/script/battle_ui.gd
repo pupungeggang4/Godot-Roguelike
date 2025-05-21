@@ -7,11 +7,12 @@ extends Control
 @onready var text_energy = get_node('TextEnergy')
 @onready var bar_hp = get_node('HPBarFull')
 @onready var bar_energy = get_node('EnergyBarFull')
+@onready var bar_exp = get_node('ExpBarFull')
 
 func _process(delta: float) -> void:
-	text_turn.text = 'Turn : ' + str(battle.turn)
-	text_hp.text = '%d/%d' % [player.hp, player.hp_max]
-	text_energy.text = '%.1f/%d' % [player.energy, player.energy_max]
-	bar_hp.region_rect.size.x = 320.0 * player.hp / player.hp_max
-	bar_energy.region_rect.size.x = 320.0 * player.energy / player.energy_max
-	print(bar_energy.region_rect)
+    text_turn.text = 'Turn : ' + str(battle.turn)
+    text_hp.text = '%d/%d' % [player.hp, player.hp_max]
+    text_energy.text = '%.1f/%d' % [player.energy, player.energy_max]
+    bar_hp.region_rect.size.x = 320.0 * player.hp / player.hp_max
+    bar_energy.region_rect.size.x = 320.0 * player.energy / player.energy_max
+    bar_exp.size.x = 1200.0 * player.exp / player.exp_max
