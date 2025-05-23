@@ -16,6 +16,8 @@ var tile = [
 var wave = [[3, 1], [6, 1], [9, 1]]
 
 @onready var node_player = get_node('Field/Unit/Player')
+@onready var node_spawn = get_node('Field/Spawn')
+@onready var node_enemy = get_node('Field/Enemy')
 
 func _ready() -> void:
     battle_init()
@@ -33,7 +35,28 @@ func end_turn() -> void:
     pass
     
 func enemy_turn() -> void:
-    pass
+    for e in node_enemy.get_children():
+        e.coord[0] += 1
+        Func.adjust_position(e)
+    spawn_handle()
+    
+func spawn_handle() -> void:
+    for w in wave:
+        if turn >= w[0]:
+            var spawn = load('res://scene/thing/spawn.tscn').instantiate()
+            spawn.set_data(w[1])
+            tile[0][0] = spawn
+            spawn.coord = [0, 0]
+            Func.adjust_position(spawn)
+            node_spawn.add_child(spawn)
+            wave.erase(w)
+            
+    for s in node_spawn.get_children():
+        if s.left_turn <= 0:
+            s.spawn_unit()
+            node_spawn.remove_child(s)
+        else:
+            s.left_turn = 0
     
 func start_turn() -> void:
     turn += 1

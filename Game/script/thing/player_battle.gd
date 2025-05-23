@@ -57,3 +57,8 @@ func handle_key_game():
                     Battle.enemy_turn()
                     Battle.start_turn()
                     Func.adjust_position(self)
+                    
+    if Input.is_action_just_released('skip'):
+        Battle.end_turn()
+        Battle.enemy_turn()
+        Battle.start_turn()

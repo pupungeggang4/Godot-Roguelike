@@ -5,6 +5,7 @@ var hp_max = 60
 var status = []
 var coord = [0, 0]
 var ID = 0
+var side = 1
 
 func _ready() -> void:
     pass
