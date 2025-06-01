@@ -1,10 +1,3 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4clh5gk8x88f"]
-
-[ext_resource type="Texture2D" uid="uid://0nb5xqglw257" path="res://image/thing/Monster001.png" id="1_3vlox"]
-[ext_resource type="Script" uid="uid://csmk0ln08j7ig" path="res://script/thing/unit.gd" id="1_np0tp"]
+[gd_scene format=3 uid="uid://b8oy4m4w05ldr"]
 
 [node name="Unit" type="Node2D"]
-script = ExtResource("1_np0tp")
-
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_3vlox")
