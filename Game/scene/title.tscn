@@ -1,3 +1,107 @@
-[gd_scene format=3 uid="uid://o68fj7sigkng"]
+[gd_scene load_steps=3 format=3 uid="uid://o68fj7sigkng"]
+
+[ext_resource type="Theme" uid="uid://d1xfia56aciqc" path="res://res/font_neodgm.tres" id="1_4fdtc"]
+[ext_resource type="Script" uid="uid://d6nj16f41egp" path="res://script/scene/title.gd" id="1_hr6ky"]
 
 [node name="Title" type="Node2D"]
+script = ExtResource("1_hr6ky")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextTitle" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 56.0
+theme = ExtResource("1_4fdtc")
+text = "Roguelike"
+
+[node name="ButtonStart" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 160.0
+offset_right = 1120.0
+offset_bottom = 240.0
+
+[node name="TextStart" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 184.0
+offset_right = 344.0
+offset_bottom = 216.0
+theme = ExtResource("1_4fdtc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Start Game"
+
+[node name="ButtonInfo" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 240.0
+offset_right = 1120.0
+offset_bottom = 320.0
+
+[node name="TextInfo" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 264.0
+offset_right = 328.0
+offset_bottom = 296.0
+theme = ExtResource("1_4fdtc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Info"
+
+[node name="ButtonChallenge" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 320.0
+offset_right = 1120.0
+offset_bottom = 400.0
+
+[node name="TextChallenge" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 344.0
+offset_right = 328.0
+offset_bottom = 376.0
+theme = ExtResource("1_4fdtc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Challenge"
+
+[node name="ButtonErase" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 400.0
+offset_right = 1120.0
+offset_bottom = 480.0
+
+[node name="TextErase" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 424.0
+offset_right = 328.0
+offset_bottom = 456.0
+theme = ExtResource("1_4fdtc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Erase"
+
+[node name="ButtonExit" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 480.0
+offset_right = 1120.0
+offset_bottom = 560.0
+
+[node name="TextExit" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 504.0
+offset_right = 328.0
+offset_bottom = 536.0
+theme = ExtResource("1_4fdtc")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Exit"
