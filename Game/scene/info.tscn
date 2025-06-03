@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://csgfy3imul58u"]
+[gd_scene load_steps=3 format=3 uid="uid://csgfy3imul58u"]
+
+[ext_resource type="Theme" uid="uid://d1xfia56aciqc" path="res://res/font_neodgm.tres" id="1_5aso6"]
+[ext_resource type="Script" uid="uid://bkdot15a6smmb" path="res://script/scene/info.gd" id="1_giixo"]
 
 [node name="Info" type="Node2D"]
+script = ExtResource("1_giixo")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextTitle" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 56.0
+theme = ExtResource("1_5aso6")
+text = "You Found..."
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0

@@ -2,8 +2,8 @@ extends Node
 
 var title = {
     'button_start': [160, 160, 960, 80],
-    'button_info': [160, 240, 960, 80],
-    'button_challenge': [160, 320, 960, 80],
+    'button_challenge': [160, 240, 960, 80],
+    'button_info': [160, 320, 960, 80],
     'button_erase': [160, 400, 960, 80],
     'button_exit': [160, 480, 960, 80]
 }
@@ -22,5 +22,5 @@ var battle = {
 }
 
 var info = {
-    'button_back': [1180, 280, 80, 80]
+    'button_back': [1180, 20, 80, 80]
 }
