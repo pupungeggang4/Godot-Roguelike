@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready() -> void:
+    print(GVar.adventure.layout)
+
 func _process(delta: float) -> void:
     handle_input()
         
@@ -13,6 +16,6 @@ func handle_input():
         elif Func.point_inside_rect_UI(mouse, UI.title.button_challenge):
             Func.change_scene(self, 'res://scene/map.tscn', 'Map')
         elif Func.point_inside_rect_UI(mouse, UI.title.button_erase):
-            pass
+            Save.erase_data()
         elif Func.point_inside_rect_UI(mouse, UI.title.button_exit):
             get_tree().quit()

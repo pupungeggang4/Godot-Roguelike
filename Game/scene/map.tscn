@@ -1,3 +1,47 @@
-[gd_scene format=3 uid="uid://c575p115tgs1l"]
+[gd_scene load_steps=3 format=3 uid="uid://c575p115tgs1l"]
+
+[ext_resource type="Theme" uid="uid://d1xfia56aciqc" path="res://res/font_neodgm.tres" id="1_rgtto"]
+[ext_resource type="Script" uid="uid://bb7qwosx532cn" path="res://script/map.gd" id="1_wpp1k"]
 
 [node name="Map" type="Node2D"]
+script = ExtResource("1_wpp1k")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextTitle" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 56.0
+theme = ExtResource("1_rgtto")
+text = "Floor 1"
+
+[node name="ButtonMenu" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 20.0
+offset_right = 1260.0
+offset_bottom = 100.0
+
+[node name="ButtonInfo" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = 1180.0
+offset_top = 620.0
+offset_right = 1260.0
+offset_bottom = 700.0
+
+[node name="Cell" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="ColorRect" parent="UI/Cell"]
+visible = false
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
