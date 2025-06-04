@@ -22,7 +22,6 @@ func load_data() -> void:
         f.close()
         f = FileAccess.open('user://save.txt', FileAccess.READ)
     data = JSON.parse_string(f.get_as_text())
-    print(data)
     
 func save_data() -> void:
     var f = FileAccess.open('user://save.txt', FileAccess.WRITE)

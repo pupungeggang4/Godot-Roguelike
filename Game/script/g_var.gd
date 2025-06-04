@@ -3,20 +3,23 @@ extends Node
 var state = ''
 var state_click = ''
 var menu = false
-var adventure = Adventure.new()
+var adventure = null
+var selected_character = -1
 
 func _ready() -> void:
     pass
 
 class Adventure:
     var floor = 0
+    var column_next = 0
     var layout = []
     func _init() -> void:
         self.floor = 1
+        self.column_next = 1
         self.layout = [
             [0, 2, 0, 2, 0, 2, 5, 0],
             [0, 2, 0, 2, 0, 2, 5, 0],
-            [1, 2, 0, 2, 0, 2, 5, 1],
+            [1, 2, 0, 2, 0, 2, 5, 6],
             [0, 2, 0, 2, 0, 2, 5, 0],
             [0, 2, 0, 2, 0, 2, 5, 0]
         ]
