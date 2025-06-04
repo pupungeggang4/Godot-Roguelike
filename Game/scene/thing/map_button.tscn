@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://5rvo3tj0r3qt"]
+[gd_scene load_steps=2 format=3 uid="uid://5rvo3tj0r3qt"]
+
+[ext_resource type="Texture2D" uid="uid://piirdgk1j4ao" path="res://image/icon/IconStart.png" id="1_eh8tn"]
 
 [node name="MapButton" type="Node2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_eh8tn")
+centered = false

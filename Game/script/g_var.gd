@@ -9,11 +9,17 @@ func _ready() -> void:
     pass
 
 class Adventure:
-    var floor = 1
-    var layout = [
-        [0, 1, 1, 1, 1, 1, 1, 0],
-        [0, 1, 1, 1, 1, 1, 1, 0],
-        [1, 1, 1, 1, 1, 1, 1, 1],
-        [0, 1, 1, 1, 1, 1, 1, 0],
-        [0, 1, 1, 1, 1, 1, 1, 0]
-    ]
+    var floor = 0
+    var layout = []
+    func _init() -> void:
+        self.floor = 1
+        self.layout = [
+            [0, 2, 0, 2, 0, 2, 5, 0],
+            [0, 2, 0, 2, 0, 2, 5, 0],
+            [1, 2, 0, 2, 0, 2, 5, 1],
+            [0, 2, 0, 2, 0, 2, 5, 0],
+            [0, 2, 0, 2, 0, 2, 5, 0]
+        ]
+        for i in range(5):
+            self.layout[i][2] = randi_range(3, 4)
+            self.layout[i][4] = randi_range(3, 4)
