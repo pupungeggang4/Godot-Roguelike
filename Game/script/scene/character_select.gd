@@ -3,6 +3,9 @@ extends Node2D
 func _ready() -> void:
     get_node('UI/SelectFrame').hide()
     var n_button = get_node('UI/Button')
+    get_node('UI/TextName').text = ''
+    get_node('UI/TextDescription').text = ''
+    get_node('UI/TextStat').text = ''
     for i in range(9):
         var n_character = load('res://scene/thing/character_button.tscn').instantiate()
         n_character.position = Vector2(UI.character_select.button_character[i][0], UI.character_select.button_character[i][1])
@@ -24,6 +27,9 @@ func handle_input():
                     get_node('UI/SelectFrame').show()
                     get_node('UI/SelectFrame').position = Vector2(UI.character_select.button_character[i][0], UI.character_select.button_character[i][1])
                     GVar.selected_character = i
+                    get_node('UI/TextName').text = str(Data.character[i + 1]['name'])
+                    get_node('UI/TextDescription').text = ''
+                    get_node('UI/TextStat').text = 'HP: %d\nEnergy: %d\nAttack: %d\nHardness: %d' % [Data.character[i + 1]['hp'], Data.character[i + 1]['energy'], Data.character[i + 1]['attack'], Data.character[i + 1]['hardness']]
                     
         if Func.point_inside_rect_UI(mouse, UI.character_select.button_start):
             if GVar.selected_character != -1:

@@ -22,6 +22,7 @@ Save="*res://script/save.gd"
 Func="*res://script/func.gd"
 UI="*res://script/ui.gd"
 Const="*res://script/const.gd"
+Data="*res://data/data.gd"
 
 [display]
 
