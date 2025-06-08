@@ -1,0 +1,294 @@
+[gd_scene load_steps=9 format=3 uid="uid://dew0gotiwm7o1"]
+
+[ext_resource type="Texture2D" uid="uid://ddig4gitcnudb" path="res://image/button/ButtonClose.png" id="1_cut27"]
+[ext_resource type="Script" uid="uid://ckdd6lxc7m1ai" path="res://script/window/player_info.gd" id="1_wajuu"]
+[ext_resource type="Texture2D" uid="uid://qtujddeblhv0" path="res://image/icon/IconProfile.png" id="2_mmy8u"]
+[ext_resource type="Texture2D" uid="uid://bg3frt8dbyb31" path="res://image/icon/IconCard.png" id="3_wajuu"]
+[ext_resource type="Theme" uid="uid://d1xfia56aciqc" path="res://res/font_neodgm.tres" id="5_d6gud"]
+[ext_resource type="Texture2D" uid="uid://cx7p7itlh2otu" path="res://image/button/ButtonPrev.png" id="6_4suyo"]
+[ext_resource type="Texture2D" uid="uid://q2cs2xsot6er" path="res://image/button/ButtonNext.png" id="7_cus3e"]
+[ext_resource type="PackedScene" uid="uid://cj0lcssjarv2m" path="res://scene/thing/card.tscn" id="8_cus3e"]
+
+[node name="PlayerInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wajuu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 1120.0
+offset_bottom = 680.0
+
+[node name="ButtonClose" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 40.0
+offset_right = 1120.0
+offset_bottom = 80.0
+texture = ExtResource("1_cut27")
+
+[node name="Tab" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabProfile" type="ReferenceRect" parent="Tab"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 40.0
+offset_right = 360.0
+offset_bottom = 80.0
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="IconProfile" type="TextureRect" parent="Tab"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 40.0
+offset_right = 280.0
+offset_bottom = 80.0
+texture = ExtResource("2_mmy8u")
+
+[node name="TabCard" type="ReferenceRect" parent="Tab"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 40.0
+offset_right = 560.0
+offset_bottom = 80.0
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="IconCard" type="TextureRect" parent="Tab"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 40.0
+offset_right = 480.0
+offset_bottom = 80.0
+texture = ExtResource("3_wajuu")
+
+[node name="Profile" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Portrait" type="ReferenceRect" parent="Profile"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 120.0
+offset_right = 360.0
+offset_bottom = 280.0
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false
+
+[node name="TextName" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 84.0
+offset_right = 328.0
+offset_bottom = 107.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Name"
+
+[node name="TextLevel" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 284.0
+offset_right = 328.0
+offset_bottom = 316.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lv.1"
+
+[node name="TextExp" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 324.0
+offset_right = 328.0
+offset_bottom = 356.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Exp: 20/20"
+
+[node name="TextGold" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 364.0
+offset_right = 328.0
+offset_bottom = 396.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Gold: 50"
+
+[node name="TextHP" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 524.0
+offset_right = 328.0
+offset_bottom = 556.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HP: 0"
+
+[node name="TextEnergy" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 564.0
+offset_right = 328.0
+offset_bottom = 596.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Energy: 0"
+
+[node name="TextAttack" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 604.0
+offset_right = 328.0
+offset_bottom = 636.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Attack: 0"
+
+[node name="TextHardness" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 644.0
+offset_right = 328.0
+offset_bottom = 676.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Hardness: 0"
+
+[node name="TextWeapon" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 84.0
+offset_right = 568.0
+offset_bottom = 116.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Weapon"
+
+[node name="TextEquipment" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 284.0
+offset_right = 568.0
+offset_bottom = 316.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Equipment"
+
+[node name="TextItem" type="Label" parent="Profile"]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 484.0
+offset_right = 568.0
+offset_bottom = 516.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Item"
+
+[node name="Card" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextCard" type="Label" parent="Card"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 84.0
+offset_right = 328.0
+offset_bottom = 116.0
+theme = ExtResource("5_d6gud")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Card"
+
+[node name="ButtonPrev" type="TextureRect" parent="Card"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 340.0
+offset_right = 220.0
+offset_bottom = 380.0
+texture = ExtResource("6_4suyo")
+
+[node name="ButtonNext" type="TextureRect" parent="Card"]
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 340.0
+offset_right = 1100.0
+offset_bottom = 380.0
+texture = ExtResource("7_cus3e")
+
+[node name="Card1" parent="Card" instance=ExtResource("8_cus3e")]
+layout_mode = 1
+offset_left = 240.0
+offset_top = 120.0
+offset_right = 240.0
+offset_bottom = 120.0
+
+[node name="Card2" parent="Card" instance=ExtResource("8_cus3e")]
+layout_mode = 1
+offset_left = 440.0
+offset_top = 120.0
+offset_right = 440.0
+offset_bottom = 120.0
+
+[node name="Card3" parent="Card" instance=ExtResource("8_cus3e")]
+layout_mode = 1
+offset_left = 640.0
+offset_top = 120.0
+offset_right = 640.0
+offset_bottom = 120.0
+
+[node name="Card4" parent="Card" instance=ExtResource("8_cus3e")]
+layout_mode = 1
+offset_left = 840.0
+offset_top = 120.0
+offset_right = 840.0
+offset_bottom = 120.0
+
+[node name="Card5" parent="Card" instance=ExtResource("8_cus3e")]
+layout_mode = 1
+offset_left = 240.0
+offset_top = 360.0
+offset_right = 240.0
+offset_bottom = 360.0
+
+[node name="Card6" parent="Card" instance=ExtResource("8_cus3e")]
+layout_mode = 1
+offset_left = 440.0
+offset_top = 360.0
+offset_right = 440.0
+offset_bottom = 360.0
+
+[node name="Card7" parent="Card" instance=ExtResource("8_cus3e")]
+layout_mode = 1
+offset_left = 640.0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Card8" parent="Card" instance=ExtResource("8_cus3e")]
+layout_mode = 1
+offset_left = 840.0
+offset_top = 360.0
+offset_right = 840.0
+offset_bottom = 360.0
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Card"]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 120.0
+offset_right = 1040.0
+offset_bottom = 600.0
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false

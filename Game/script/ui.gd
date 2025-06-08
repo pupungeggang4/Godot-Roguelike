@@ -20,6 +20,12 @@ var character_select = {
 
 var map = {
     'button_menu': [1180, 20, 80, 80],
+    'button_info': [1180, 620, 80, 80],
+    'info_close': [1080, 40, 40, 40],
+    'tab_profile': [160, 40, 200, 40],
+    'tab_card': [360, 40, 200, 40],
+    'info_card_button_prev': [180, 340, 40, 40],
+    'info_card_button_next': [1060, 340, 40, 40],
     'element_start': [180, 80],
     'element_size': [80, 80],
     'element_interval': [120, 120],

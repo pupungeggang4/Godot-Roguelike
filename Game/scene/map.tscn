@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c575p115tgs1l"]
+[gd_scene load_steps=6 format=3 uid="uid://c575p115tgs1l"]
 
 [ext_resource type="Theme" uid="uid://d1xfia56aciqc" path="res://res/font_neodgm.tres" id="1_rgtto"]
 [ext_resource type="Script" uid="uid://bb7qwosx532cn" path="res://script/map.gd" id="1_wpp1k"]
 [ext_resource type="Texture2D" uid="uid://d4jaluyh0brpe" path="res://image/button/ButtonMenu.png" id="3_nf54y"]
 [ext_resource type="Texture2D" uid="uid://7ty1vgkdb5m3" path="res://image/button/ButtonInfo.png" id="4_4xw1d"]
+[ext_resource type="PackedScene" uid="uid://dew0gotiwm7o1" path="res://scene/window/player_info.tscn" id="5_4xw1d"]
 
 [node name="Map" type="Node2D"]
 script = ExtResource("1_wpp1k")
@@ -43,3 +44,5 @@ texture = ExtResource("4_4xw1d")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="PlayerInfo" parent="UI" instance=ExtResource("5_4xw1d")]

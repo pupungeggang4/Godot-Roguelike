@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj0lcssjarv2m"]
+
+[ext_resource type="Theme" uid="uid://d1xfia56aciqc" path="res://res/font_neodgm.tres" id="1_qbiym"]
+[ext_resource type="Script" uid="uid://bni12v3xn7t46" path="res://script/thing/card.gd" id="1_xpy3r"]
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xpy3r")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 240.0
+
+[node name="Image" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 180.0
+offset_bottom = 140.0
+color = Color(1, 1, 0, 1)
+
+[node name="TextEnergy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 27.0
+theme = ExtResource("1_qbiym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "1"
+
+[node name="TextName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 142.0
+offset_right = 52.0
+offset_bottom = 158.0
+theme = ExtResource("1_qbiym")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Attack"
+
+[node name="TextDescription" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 160.0
+offset_right = 196.0
+offset_bottom = 240.0
+theme = ExtResource("1_qbiym")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 16
+text = "Deal 5 Damage."
+
+[node name="ReferenceRect" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 240.0
+border_color = Color(0, 0, 0, 1)
+border_width = 2.0
+editor_only = false

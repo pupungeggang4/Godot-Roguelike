@@ -2,9 +2,17 @@ extends Node
 
 var state = ''
 var state_click = ''
+var info_player_tab = 'profile'
+var info_player_page = 0
+var info_tab = 'card'
+var info_tab_page = 0
+
 var menu = false
-var adventure = null
+var adventure = Adventure.new()
+var player_adventure = preload('res://script/player_adventure.gd').new()
 var selected_character = -1
+
+var Card = preload('res://script/thing/class_card.gd')
 
 func _ready() -> void:
     pass

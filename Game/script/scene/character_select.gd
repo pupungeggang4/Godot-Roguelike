@@ -18,7 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
     handle_input()
     
-func handle_input():
+func handle_input() -> void:
     if Input.is_action_just_released('mouse_left'):
         var mouse = get_viewport().get_mouse_position()
         for i in range(9):
@@ -34,6 +34,7 @@ func handle_input():
         if Func.point_inside_rect_UI(mouse, UI.character_select.button_start):
             if GVar.selected_character != -1:
                 Func.change_scene(self, 'res://scene/map.tscn', 'Map')
+                GVar.player_adventure.set_data(GVar.selected_character + 1)
         
         if Func.point_inside_rect_UI(mouse, UI.character_select.button_back):
             Func.change_scene(self, 'res://scene/title.tscn', 'Title')
